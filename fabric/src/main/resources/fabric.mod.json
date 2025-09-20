@@ -1,27 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "${mod_id}",
+  "id": "overruled",
   "version": "${version}",
-  "name": "${mod_name}",
-  "description": "${description}",
-  "authors": $mod_authors,
+  "name": "Overruled",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/fabricmc/"
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-  "license": "${license}",
-  "icon": "assets/${mod_id}/icon.png",
+  "license": "CC0-1.0",
+  "icon": "assets/overruled/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.joellogan.overruled.OverruledFabric"
+      "com.joellogan.fabric.ExampleModFabric"
+    ],
+    "client": [
+      "com.joellogan.fabric.client.ExampleModFabricClient"
     ]
   },
   "mixins": [
     "overruled.mixins.json"
   ],
   "depends": {
-    "fabric": "*",
-    "minecraft": $compatible_mc_versions
+    "fabricloader": ">=0.17.2",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "architectury": ">=17.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }
